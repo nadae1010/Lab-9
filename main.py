@@ -17,6 +17,16 @@ def encode_password(password):
     return encoded_password
 
 
+def decode_password(encoded_password):
+    encoded_password_list = []
+    for digit in encoded_password:
+        encoded_password_list += digit
+    encoded_password_list = list(map(int, encoded_password_list))
+    decoded_password_list = [x - 3 for x in encoded_password_list]
+    decoded_password = "". join(map(str, decoded_password_list))
+    return decoded_password
+
+
 if __name__ == "__main__":
     # Test the encode_password function
     password = input("Enter an 8-digit password containing only integers: ")
@@ -26,3 +36,4 @@ if __name__ == "__main__":
         print("Encoded Password:", encoded)
     except ValueError as e:
         print("Error:", e)
+
