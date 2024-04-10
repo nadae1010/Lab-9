@@ -26,18 +26,3 @@ if __name__ == "__main__":
         print("Encoded Password:", encoded)
     except ValueError as e:
         print("Error:", e)
-
-def decode_password(encoded_password):
-    decoded_password = ""
-    for digit in encoded_password:
-        # Decrement each digit by 3 to get the original password
-        original_digit = str(int(digit) - 3)
-        decoded_password += original_digit
-    return decoded_password
-
-
-if __name__ == "__main__":
-    encoded_password = "45678888"
-    decoded_password = decode_password(encoded_password)
-    print("Encoded Password:", encoded_password)
-    print("Decoded Password:", decoded_password)
